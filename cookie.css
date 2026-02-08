@@ -1,0 +1,570 @@
+/* --- Colori di Base --- */
+:root {
+    --giornale-font: 'Georgia', serif;
+    --primary-color: #333; /* Nero/Grigio scuro per il testo */
+    --secondary-color: #F0F8FF; /* Celeste per l'aria */
+    --cookie-overlay-bg: rgba(255, 255, 255, 0.95); /* Sfondo semi-trasparente */
+    --cookie-banner-bg: #fff;
+    --fuchsia: #FF00FF; /* Fucsia vivo per il badge e la sidebar */
+    --armani-blue: #003060; /* Blu scuro per i titoli del giornale */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--secondary-color); /* Sfondo celeste */
+    margin: 0;
+    padding: 0;
+}
+
+/* --- Layout Generale dell'Articolo --- */
+.page-content {
+    display: flex;
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: #fff; /* Contenuto bianco per simulare la carta */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding: 20px;
+    z-index: 10;
+}
+
+/* Header del Giornale */
+.giornale-header {
+    text-align: center;
+    border-bottom: 3px solid var(--armani-blue);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.giornale-header h1 {
+    font-family: var(--giornale-font);
+    font-size: 48px;
+    color: var(--armani-blue);
+    margin: 0;
+    line-height: 1;
+}
+
+.giornale-header h2 {
+    font-size: 14px;
+    font-weight: normal;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Articolo Principale */
+.news-article {
+    flex: 3;
+    padding-right: 30px;
+    border-right: 1px solid #ccc;
+}
+
+.article-title {
+    font-family: var(--giornale-font);
+    font-size: 32px;
+    color: var(--primary-color);
+    margin-top: 0;
+    line-height: 1.1;
+}
+
+.article-meta {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.article-body p {
+    font-family: var(--giornale-font);
+    font-size: 17px;
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.dropcap {
+    float: left;
+    font-size: 4em;
+    line-height: 0.8;
+    margin-right: 8px;
+    font-weight: bold;
+    color: var(--armani-blue);
+}
+
+.article-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px 0;
+}
+
+.blurred-text {
+    /* Simula il testo nascosto dietro il banner */
+    filter: blur(2px);
+    color: #ccc;
+    pointer-events: none;
+}
+
+/* Sidebar Notizie */
+.sidebar {
+    flex: 1;
+    padding-left: 20px;
+}
+
+.sidebar h3 {
+    color: var(--armani-blue);
+    border-bottom: 2px solid var(--armani-blue);
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: var(--primary-color);
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.sidebar ul li a:hover {
+    color: var(--armani-blue);
+}
+
+/* --- BANNER COOKIE (Overlay) --- */
+.cookie-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--cookie-overlay-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.cookie-banner {
+    background-color: var(--cookie-banner-bg);
+    border: 1px solid #ddd;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.cookie-banner h2 {
+    color: var(--armani-blue);
+    margin-top: 0;
+}
+
+.cookie-banner p {
+    font-size: 15px;
+    color: #555;
+}
+
+.cookie-categories {
+    list-style: none;
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+    margin-top: 20px;
+    text-align: left;
+    font-size: 14px;
+}
+
+.cookie-buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.cookie-buttons button {
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    flex-grow: 1;
+}
+
+.btn-primary {
+    background-color: var(--armani-blue);
+    color: white;
+    border: 1px solid var(--armani-blue);
+}
+
+.btn-secondary {
+    background-color: #f2f2f2;
+    color: var(--primary-color);
+    border: 1px solid #ccc;
+}
+
+.btn-tertiary {
+    background-color: white;
+    color: var(--armani-blue);
+    border: 1px solid var(--armani-blue);
+}
+
+/* --- BADGE "Semplifica Cookie" --- */
+.cookie-badge {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--fuchsia);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 4px 15px rgba(255, 0, 255, 0.4);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    z-index: 1001;
+    text-transform: uppercase;
+}
+
+.cookie-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 0, 255, 0.6);
+}
+
+
+.cookie-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px; 
+    height: 100%;
+    /* MODIFICA: Sfondo Fucsia */
+    background-color: var(--fuchsia); 
+    color: white; 
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.15);
+    z-index: 1100; 
+    padding: 20px;
+    box-sizing: border-box;
+    transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+    .cookie-sidebar {
+    overflow-y: auto; 
+    max-height: 100vh;
+}
+}
+
+.cookie-sidebar.open {
+    transform: translateX(0);
+    overflow-y: auto; 
+    max-height: 100vh;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid white; 
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.sidebar-header h3 {
+    color: white; 
+    margin: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: white; 
+    cursor: pointer;
+}
+
+.sidebar-intro {
+    font-size: 14px;
+    color: white;
+}
+
+.simplified-list {
+    list-style: none;
+    padding: 0;
+}
+
+.simplified-list li {
+    background-color: rgba(255, 255, 255, 0.2); 
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border-left: 5px solid white; 
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.simplified-list h4 {
+    margin-top: 0;
+    color: white;
+}
+
+.simplified-list p {
+    font-size: 13px;
+    color: white;
+}
+
+.save-preferences-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: white; 
+    color: var(--fuchsia);
+    border: 1px solid #CC00CC;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.2s;
+}
+
+.save-preferences-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* --- Toggle Switch --- */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 25px;
+  float: right;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 17px;
+  width: 17px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: white; 
+}
+
+input:checked + .slider:before {
+  background-color: var(--fuchsia); 
+  transform: translateX(18px);
+}
+
+.slider.round {
+  border-radius: 25px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+    .page-content {
+        flex-direction: column;
+        padding: 10px;
+    }
+    .news-article {
+        border-right: none;
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+    .cookie-banner {
+        padding: 20px;
+        width: 80%;
+    }
+    .cookie-buttons {
+        flex-direction: column;
+    }
+    .cookie-badge {
+        bottom: 10px;
+        right: 10px;
+        padding: 10px 15px;
+    }
+}
+
+/* --- OTTIMIZZAZIONE MOBILE AVANZATA (max 480px) --- */
+@media (max-width: 480px) {
+    /* Overlay Cookie Principale */
+    .cookie-banner {
+        width: 92%;
+        padding: 20px;
+        border-radius: 12px;
+        max-height: 90vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .cookie-buttons {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .cookie-buttons button {
+        padding: 15px; /* Più alto per il tocco */
+        font-size: 16px;
+    }
+
+    /* Sidebar Fucsia "Hedy" */
+    .cookie-sidebar {
+        width: 100% !important; /* Prende tutto lo schermo */
+        padding: 25px 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sidebar-header {
+        margin-bottom: 25px;
+    }
+
+    .sidebar-header h3 {
+        font-size: 1.5em;
+    }
+
+    /* La "X" di chiusura: più grande e facile da colpire */
+    .close-btn {
+        background: rgba(255, 255, 255, 0.2);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 0;
+        font-size: 32px;
+    }
+
+    /* Lista delle opzioni: più leggibile */
+    .simplified-list li {
+        padding: 20px;
+        margin-bottom: 15px;
+    }
+
+    .simplified-list h4 {
+        font-size: 1.1em;
+        margin-bottom: 8px;
+    }
+
+    /* Il pulsante SALVA: deve dominare la parte bassa */
+    .save-preferences-btn {
+        margin-top: auto; /* Lo spinge in fondo alla sidebar */
+        padding: 18px;
+        font-size: 18px;
+        background-color: #fff;
+        color: var(--fuchsia);
+        border: none;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+}
+
+/* Container che tiene insieme Banner e Tasto Hedy */
+.cookie-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 0 50px;
+}
+
+/* Rendi il banner principale senza angoli arrotondati sotto per unirlo al tasto */
+.cookie-banner {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px 12px 0 0; /* Arrotonda solo sopra */
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Il tasto fucsia "attaccato" sotto il banner */
+.cookie-badge-under {
+    background-color: var(--fuchsia);
+    color: white;
+    width: 100%;
+    margin-top: 10px;
+    padding: 15px;
+    border: none;
+    border-radius: 12px 12px; /* Arrotonda solo sotto */
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(255, 0, 255, 0.2);
+    transition: background 0.3s;
+}
+
+.cookie-badge-under:hover {
+    background-color: #e600e6;
+}
+
+
+/* Media Query Mobile */
+@media (max-width: 480px) {
+    .cookie-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* --- Allineamento Intestazione Elemento (Titolo + Switch) --- */
+.list-item-header {
+    display: flex;
+    justify-content: space-between; /* Spinge il titolo a sinistra e lo switch a destra */
+    align-items: center;            /* Allinea verticalmente al centro */
+    gap: 15px;                      /* Spazio minimo tra testo e switch */
+    margin-bottom: 10px;            /* Distanza dal paragrafo descrittivo */
+}
+
+.list-item-header h4 {
+    margin: 0;                      /* Rimuove margini che sfasano l'allineamento */
+    flex: 1;                        /* Permette al titolo di occupare lo spazio necessario */
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+/* --- Switch a Posizione Fissa (Dimensione Bloccata) --- */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 24px;
+    flex-shrink: 0;                 /* IMPORTANTE: Impedisce allo switch di rimpicciolirsi */
+}
+
+/* --- Pulizia dello Slider --- */
+.slider:before {
+    height: 16px;                   /* Leggermente ridotto per centratura ottica */
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+}

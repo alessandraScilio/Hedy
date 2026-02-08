@@ -1,0 +1,133 @@
+/* Stile Generale e Font */
+body {
+    font-family: 'Times New Roman', Times, serif; /* Font Serif per serietà */
+    line-height: 1.4; /* Interlinea leggermente compressa per densità */
+    color: #111;
+    margin: 0;
+    padding: 20px;
+    background-color: #fcfcfc; /* Carta leggermente meno bianca */
+}
+
+/* Masthead (Testata) */
+.masthead {
+    border-bottom: 3px solid #000;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.masthead h1 {
+    font-family: Georgia, serif; /* Un serif più robusto per il logo */
+    font-size: 3em;
+    margin: 0 0 5px 0;
+    letter-spacing: -1px;
+}
+.masthead p {
+    margin: 0;
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+/* Layout della Pagina (Griglia a 6 Colonne) */
+.page-container {
+    display: grid;
+    /* 6 colonne di larghezza uguale (1fr) */
+    grid-template-columns: repeat(6, 1fr); 
+    /* Margine stretto tra le colonne */
+    gap: 15px; 
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Articolo Principale: occupa le prime 4 colonne */
+.main-article {
+    grid-column: span 4;
+}
+
+/* Sidebar: occupa le ultime 2 colonne */
+.sidebar-box {
+    grid-column: span 2;
+    background-color: #f4f4f4; /* Leggero sfondo per il box-out */
+    padding: 15px;
+    border-left: 1px solid #ccc; /* Linea verticale sottile di separazione */
+}
+
+/* Tipografia del Corpo del Testo */
+.main-article p {
+    text-align: justify; /* CHIAVE: Giustifica per l'effetto ordinato e pieno */
+    font-size: 10pt;
+    margin-bottom: 12px;
+}
+
+/* Titoli e Sottotitoli */
+.occhiello {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: #555;
+    margin: 0 0 5px 0;
+}
+.headline {
+    font-family: 'Georgia', serif;
+    font-size: 2em;
+    line-height: 1.1;
+    margin: 0 0 10px 0;
+}
+.summary {
+    font-size: 1.1em;
+    font-style: italic;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Immagini e Didascalie */
+.main-photo {
+    margin: 15px 0;
+    overflow: hidden;
+}
+.main-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.main-photo figcaption {
+    font-size: 0.8em;
+    font-style: italic;
+    text-align: right;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Pull Quotes (Citazioni) */
+.pull-quote {
+    display: block;
+    font-size: 1.4em;
+    font-style: italic;
+    color: #333;
+    padding: 10px 0;
+    margin: 15px 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Brevi del Mattino (Sidebar) */
+.sidebar-box h3 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}
+.breve {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #ccc;
+}
+.breve h4 {
+    font-size: 1em;
+    margin: 0 0 5px 0;
+    color: #000;
+}
+.breve p {
+    text-align: left; /* Le brevi possono usare allineamento a sinistra per maggiore leggibilità veloce */
+    font-size: 0.9em;
+    margin: 0;
+}
+
